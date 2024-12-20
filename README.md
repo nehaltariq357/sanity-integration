@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# This step will help you create a Sanity project.
 
-## Getting Started
-
-First, run the development server:
+## Step 1: Create a new Next.js project
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx create-next-app .
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Step 2: Install Sanity Studio
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You start by setting up your content editing environment. It’s called Sanity Studio, and you can configure and customize it with JavaScript. It runs in the browser. To develop locally, we need to run a development server so you can see your changes instantly.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### To get started, run this in your command line:
 
-## Learn More
+```bash
+npm create sanity@latest -- --template clean --create-project "learning-sanity-project" --dataset production
+```
 
-To learn more about Next.js, take a look at the following resources:
+This will take you through a setup process by guiding you through the following steps:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Create an account. Select a login provider from the list of options, and confirm with Enter. After creating an account in the browser, come back to the command line window.
+2. It will ask you the following questions.
+   - Would you like to add configuration files for a Sanity project in this Next.js folder? Yes
+   - Would you like an embedded Sanity Studio? Yes
+   - Would you like to use the Next.js app directory for routes? Yes
+   - What route do you want to use for the Studio? /studio
+   - Select project template to use Clean project with no predefined schemas
+   - Would you like to add the project ID and dataset to your .env file? Yes
+3. Wait a bit for the installation process to complete. When you get a Success! message, you're good to move on to the next step!! 🎉
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Step 3: Run the Studio locally
 
-## Deploy on Vercel
+```terminal
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This will start the next js project. Once the build is complete, you can head over to `http://localhost:3000/studio`. It will ask you to add the URL as a CORS origin. Click on Continue to open the Sanity management dashboard. From there, you need to add the CORS origin.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#### You should now see the Sanity Studio running in your browser
+
+As you modify and save the code, the server will automatically rebuild the studio and refresh the browser.
